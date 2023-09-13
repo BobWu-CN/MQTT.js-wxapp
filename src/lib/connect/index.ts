@@ -20,11 +20,18 @@ if (!IS_BROWSER) {
 	protocols.tls = protocols.ssl
 	protocols.mqtts = require('./tls').default
 } else {
-	protocols.wx = require('./wx').default
-	protocols.wxs = require('./wx').default
 
-	protocols.ali = require('./ali').default
-	protocols.alis = require('./ali').default
+}
+
+declare const wx;
+if(typeof wx != "undefined"){
+  protocols.wx = require('./wx').default
+  protocols.wxs = require('./wx').default
+}
+declare const my;
+if(typeof my != "undefined"){
+  protocols.ali = require('./ali').default
+  protocols.alis = require('./ali').default
 }
 
 protocols.ws = require('./ws').default
