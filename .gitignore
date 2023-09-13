@@ -7,7 +7,7 @@ Session.vim
 .netrwhist
 *~
 npm-debug.log
-dist/
+!dist/
 yarn.lock
 coverage
 .nyc_output
@@ -22,3 +22,4 @@ test/typescript/*.map
 
 /build/
 
+!/node_modules/mqtt-packet/writeToStream.js
